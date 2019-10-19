@@ -10,10 +10,10 @@ decks][0] (which I have not purchased). After I read [this incredibly
 well-written][1] review of the product I decided it wasn't the right choice for
 me.
 
-Since I didn't want to spend the $12 on his deck, but I didn't want to
-explore the concept, I found [this pretty good anki deck][2] for French
-pronunciation. It has 349 notes, and is well put together, but I feel it's not
-enough, specifically given this quote from that review I linked:
+Since I didn't want to spend the $12 on his deck, but I did want to explore the
+concept, I found [this pretty good anki deck][2] for French pronunciation. It
+has 349 notes, and is well put together, but I feel it's not enough,
+specifically given this quote from that review I linked:
 
 > Perhaps a better approach would have been to have only recorded people
 > speaking their own language but to have a large enough pool of voices that it
@@ -62,6 +62,47 @@ I'm going to restart, and create a list of only the minimal pairs I care about
 It's starting to feel like I would have been better off just scraping like a
 jerk than buying the api.
 
+The Reckoning
+=============
+
+Alright, so I recognized first that I don't really need to worry about
+consonants. I saved like 2 pairs from that. The second thing I realized is that
+there are an absurd amount of duplicates in this list, not just of pairs, but of
+words.
+
+First thing I did was go through the actual web page and my csv list and deleted
+most of the consonant pairings. That brought me down to 1487 from 3792. Since
+French vowels are the most difficult to hear, I'll just stick with those. And
+since I don't feel like figuring out which vowels are problematic (obviously I
+can differentiate opposition from imposition even in French) I'll just keep them
+all. Because...
+
+The second thing I did was deduplicate the list of pairs. That brought me from
+1487 down to 745. This is starting to sound more doable.
+
+In those 745 pairs are (obviously) `745 x 2 =` 1,490 words. But there an absurd
+amount of duplicates. Bringing that down to unique we have a mere 497 unique
+words.
+
+497 words times an average of 3 files per word comes to 1,491 files to download.
+That's almost 2,000 requests which I can do in (probably) a little over 4 days.
+
+Now I just have to write a program that will do the following:
+
+1. Take in the list of unique words
+2. query forvo for the word
+3. Limit the list to the pronunciations in French (the api doesn't seem to do
+   that).
+4. Download each of the French pronunciations of the given word.
+5. Add the filenames to a json file to identify each word (and keep track of
+   what has already been downloaded).
+5. Repeat steps 3, 4, and 5 until I hit the 500 request rate limit.
+
+Then, after that, I will use combinatronics to match every wordpair with every
+file so that I have the maximum number of anki cards with the maximum number of
+sounds for ultimate learning goodness.
+
+Now to begin this hard part.
 
 [0]: https://fluent-forever.com/product/fluent-forever-pronunciation-trainer/
 [1]: https://www.reddit.com/r/German/comments/2przo1/a_review_of_fluent_forever_foreign_language/

@@ -19,7 +19,24 @@ def getraw(word):
 
 # get the list of words
 words = [line.rstrip() for line in open('uniquewords.txt')]
-fileindex = [] # a list of dictionaries of words and corresponding file names
+
+
+# try to open a list of dictionaries of words and corresponding file names. If
+# it doesn't exist, create it.
+try:
+    fileindex = json.load(open('filenames.json'))
+except FileNotFoundError:
+    fileindex = []
+
+if len(fileindex) == len(words):
+    sys.exit("CONGRATULATIONS YOU ARE DONE!!!! ANKI TIME BITCH!")
+
+
+if len(fileindex) > 0:
+    # If the fileindex existed and had entries, take the last one, and cut the
+    # head off the list of words up to the most recently downloaded.
+    words = words[words.index(fileindex[-1]['word'])+1:]
+
 
 def failout():
     """A failsafe to save progress and avoid redownloading files or making
@@ -28,6 +45,7 @@ def failout():
     with open('filenames.json', 'w') as fout:
         json.dump(fileindex, fout)
     sys.exit(f'{len(fileindex)}')
+
 
 for word in words:
     # try to get the index of the word

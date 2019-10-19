@@ -1,0 +1,88 @@
+# coding: utf-8
+import requests
+from bs4 import BeautifulSoup4
+from bs4 import BeautifulSoup
+siteurl = 'https://minimalpairs.net/en/fr'
+requests.get(siteurl)
+soup = BeautifulSoup(raw)
+raw = requests.get(siteurl)
+soup = BeautifulSoup(raw)
+soup = BeautifulSoup(raw.text)
+soup
+soup('span', {'_class': 'wordpair'})
+soup('span', class='wordpair')
+soup.find_all('span', class='wordpair')
+soup.find_all('span', 'wordpair')
+wordpairs = soup.find_all('span', 'wordpair')
+wordpairs
+import csv
+wplist = []
+wordpairs[0]
+wordpairs[0].span
+wordpairs[0].span[1]
+wordpairs[0]
+wordpairs[0].text
+for word in wordpairs:
+    print(word.text)
+    
+for word in wordpairs:
+   if word.text.count(' ') > 4:
+       print('fail')
+        
+x = 0
+for word in wordpairs:
+    if word.text.count(' ') > x:
+        x = word.text.count(' ')
+            
+x
+x = 4
+for word in wordpairs:
+    if word.text.count(' ') < x:
+        x = word.text.count(' ')
+            
+x
+wordpairstext = []
+for pair in wordpairs:
+    wordpairstext.append(pair.text)
+    
+wordpairstext
+for pair in wordpairstext:
+    count = pair.count('|')
+    if count != 1:
+        break
+cont
+count
+%list
+%who
+wplist
+for pair in wordpairstext:
+    pair.replace('| ', '')
+    wplist.append(pair.split())
+wplist
+wplist = ''
+for pair in wordpairstext:
+    pair.replace('|', '')
+    wplist.append(pair.split())
+wplist = []
+for pair in wordpairstext:
+    pair.replace('|', '')
+    wplist.append(pair.split())
+wplist
+wordpairstext[0].replace('|', '')
+wordpairstext[0].replace('| ', '')
+for pair in wordpairstext:
+    tmp = pair.replace('| ', '')
+    wplist.append(tmp.split())
+wplist
+wordpairstext[0].replace('| ', '')
+wordpairstext[0].replace('| ', '').split()
+wplist = []
+for pair in wordpairstext:
+    wplist.append(pair.replace('| ', '').split())
+wplilst
+wplist
+len(wplist)
+with open('wordpairsraw.csv', 'w', newline='') as fout:
+    writer = csv.writer(fout)
+    writer.writerows(wplist)
+    

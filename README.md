@@ -38,6 +38,31 @@ I want it, and it's not even a machine readable format (it's html). Tant pis.
 Instead of emailing him for it (which would be obnoxious), I figured I'd just
 break out BeautifulSoup4 and parse it myself into 4 fields: 
 
+1. The 1st word
+2. The 1st word's IPA
+3. The 2nd word
+4. The 2nd word's IPA
+
+This went off without a hitch.
+
+The next step is to get all of the audio files. They are conveniently labelled
+with esoteric id names, which will help in identifying them when I convert them
+into anki, but for $12 (at six months) I have a 500 requests per day rate limit.
+What's worse is that each audio file's time to be downloaded is limited to two
+hours (they're one time links, I guess). And, finally, each audio file download
+also counts toward my requests. There are 3792 pairs, which is 7584 words, and
+for any word there may be 4-5 pronunciations. If we average at 3 that's 22,752
+downloads, which does not include the requests to get the files (which will
+require 7,584 requests), which ends up being 30,336 requests. That will take me
+2 months to download.
+
+I'm going to restart, and create a list of only the minimal pairs I care about
+(since I know the difference between n and m).
+
+It's starting to feel like I would have been better off just scraping like a
+jerk than buying the api.
+
+
 [0]: https://fluent-forever.com/product/fluent-forever-pronunciation-trainer/
 [1]: https://www.reddit.com/r/German/comments/2przo1/a_review_of_fluent_forever_foreign_language/
 [2]: https://ankiweb.net/shared/info/932662308

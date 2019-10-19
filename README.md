@@ -104,6 +104,18 @@ sounds for ultimate learning goodness.
 
 Now to begin this hard part.
 
+The Download
+------------
+
+This is turning out easier than I expected. I wrote the program (download.py)
+and already maxed out my first day quota. I finished 132 of the 497 words, which
+resulted in 356 files. A little under 3 per word.
+
+The quota resets 22:00 UTC, which is literally in an hour, so I'll come back
+here this evening and run it again today.
+
+By Tuesday, I'd say, I'll have them all.
+
 [0]: https://fluent-forever.com/product/fluent-forever-pronunciation-trainer/
 [1]: https://www.reddit.com/r/German/comments/2przo1/a_review_of_fluent_forever_foreign_language/
 [2]: https://ankiweb.net/shared/info/932662308

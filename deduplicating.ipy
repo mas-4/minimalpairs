@@ -1,0 +1,41 @@
+# coding: utf-8
+import csv
+wordpairs = []
+with open('wordpairsraw.csv', newline='') as fin:
+    reader = csv.reader(fin)
+    for row in reader:
+        wordpairs.append(row)
+        
+wordpairs
+import itertools
+wordpairs.sort()
+wordpairs
+deduped = list(k for k,_ in itertools.groupby(wordpairs))
+deduped
+len(wordpairs)
+len(deduped)
+ls
+with open('minimalpairs.csv', newline='') as fout:
+    writer = csv.writer(fout)
+    writer.writerows(deduped)
+    
+with open('minimalpairs.csv', 'w', newline='') as fout:
+    writer = csv.writer(fout)
+    writer.writerows(deduped)
+    
+words = []
+for pair in deduped:
+    words.append(pair[0])
+    words.append(pair[2])
+    
+words
+words.sort()
+words
+len(words)
+uniquewords = list(set(words))
+uniquewords
+len(uniquewords
+)
+with open('uniquewords.txt', 'wt') as fout:
+    fout.write("\n".join(uniquewords))
+    

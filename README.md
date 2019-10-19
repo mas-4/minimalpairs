@@ -63,7 +63,7 @@ It's starting to feel like I would have been better off just scraping like a
 jerk than buying the api.
 
 The Reckoning
-=============
+-------------
 
 Alright, so I recognized first that I don't really need to worry about
 consonants. I saved like 2 pairs from that. The second thing I realized is that

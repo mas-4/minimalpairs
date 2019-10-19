@@ -31,10 +31,10 @@ My Google Fu was feeling quite tingly, so I googled French minimal pairs and
 found [this excellent linguistics Stack Exchange answer][3] which lead me to
 [this blog post][4] where a brilliant man describes developing [this incredible
 list][5] of every minimal pair in the French language. ([He also did it for
-American English, Dutch, and Spanish if anyone is interested.][5]).
+American English, Dutch, and Spanish if anyone is interested.][5])
 
-The problem with this, of course, is that (a) his list does not have audio like
-I want it, and it's not even a machine readable format (it's html). Tant pis.
+The problem with this, of course, is that his list does not have audio like I
+want it, and it's not even a machine readable format (it's html). Tant pis.
 Instead of emailing him for it (which would be obnoxious), I figured I'd just
 break out BeautifulSoup4 and parse it myself into 4 fields: 
 
@@ -45,19 +45,17 @@ break out BeautifulSoup4 and parse it myself into 4 fields:
 
 This went off without a hitch.
 
-The next step is to get all of the audio files. They are conveniently labelled
-with esoteric id names, which will help in identifying them when I convert them
-into anki, but for $12 (at six months) I have a 500 requests per day rate limit.
-What's worse is that each audio file's time to be downloaded is limited to two
-hours (they're one time links, I guess). And, finally, each audio file download
-also counts toward my requests. There are 3792 pairs, which is 7584 words, and
-for any word there may be 4-5 pronunciations. If we average at 3 that's 22,752
-downloads, which does not include the requests to get the files (which will
-require 7,584 requests), which ends up being 30,336 requests. That will take me
-2 months to download.
+The next step is to get all of the audio files. For $12 (at six months) I have a
+500 requests per day rate limit. What's worse is that each audio file's time to
+be downloaded is limited to two hours (they're one time links, I guess). And,
+finally, each audio file download also counts toward my requests. There are 3792
+pairs, which is 7584 words, and for any word there may be 4-5 pronunciations. If
+we average at 3 that's 22,752 downloads, which does not include the requests to
+get the indexes of files per word (which will require 7,584 requests), which
+ends up being 30,336 requests. That will take me 2 months to download.
 
 I'm going to restart, and create a list of only the minimal pairs I care about
-(since I know the difference between n and m).
+(since I know the difference between n and m, for instance).
 
 It's starting to feel like I would have been better off just scraping like a
 jerk than buying the api.
@@ -80,9 +78,8 @@ all. Because...
 The second thing I did was deduplicate the list of pairs. That brought me from
 1487 down to 745. This is starting to sound more doable.
 
-In those 745 pairs are (obviously) `745 x 2 =` 1,490 words. But there an absurd
-amount of duplicates. Bringing that down to unique we have a mere 497 unique
-words.
+In those 745 pairs are `745 x 2 =` 1,490 words. But there an absurd amount of
+duplicates. Bringing that down to unique we have a mere 497 unique words.
 
 497 words times an average of 3 files per word comes to 1,491 files to download.
 That's almost 2,000 requests which I can do in (probably) a little over 4 days.
@@ -91,12 +88,16 @@ Now I just have to write a program that will do the following:
 
 1. Take in the list of unique words
 2. query forvo for the word
-3. Limit the list to the pronunciations in French (the api doesn't seem to do
-   that).
+3. Make sure the word given matches the word I searched for (forvo will serve
+   `à` even when I just search `a`, so I have to make an explicit match in
+   Python).
 4. Download each of the French pronunciations of the given word.
 5. Add the filenames to a json file to identify each word (and keep track of
    what has already been downloaded).
-5. Repeat steps 3, 4, and 5 until I hit the 500 request rate limit.
+6. Repeat steps 3, 4, and 5 until I hit the 500 request rate limit.
+7. Fail out by writing the list of dictionaries to the json file mentioned in
+   item 5 (I decided to write it once at failtime instead of continuously write
+   for every new word because... Well, I'm not stupid.
 
 Then, after that, I will use combinatronics to match every wordpair with every
 file so that I have the maximum number of anki cards with the maximum number of

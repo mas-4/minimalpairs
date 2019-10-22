@@ -1,6 +1,13 @@
 Minimal Pairs Scraping Project
 ==============================
 
+This project sought to create an anki deck of minimal pairs for vowels. To
+download the anki deck, please click this link: [French Minimal Pairs for
+Vowels][6].
+
+Inspiration
+-----------
+
 I am going to use forvo's api ($12 for six months, a little overpriced to use
 once) in order to generate an anki deck of minimal pairs to be able to identify
 French words.
@@ -117,9 +124,19 @@ here this evening and run it again today.
 
 By Tuesday, I'd say, I'll have them all.
 
+The Deck
+--------
+
+So as predicted I finished today. Added too ipy files because my first attempt
+to create the deck was a little short sighted and I didn't think about how to
+cite the file name to play the audio.
+
+Anyway, shared the anki deck and now it's linked at the top.
+
 [0]: https://fluent-forever.com/product/fluent-forever-pronunciation-trainer/
 [1]: https://www.reddit.com/r/German/comments/2przo1/a_review_of_fluent_forever_foreign_language/
 [2]: https://ankiweb.net/shared/info/932662308
 [3]: https://linguistics.stackexchange.com/a/11634
 [4]: http://verbally.flimzy.com/list-of-french-minimal-pairs/
 [5]: https://minimalpairs.net/en
+[6]: https://ankiweb.net/shared/info/214686543

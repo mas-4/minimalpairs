@@ -1,0 +1,61 @@
+# coding: utf-8
+import json
+idx = json.load(open('filenames.json'))
+impot csv
+import csv
+with open('minimalpairs.csv', newline='') as f:
+    reader = csv.reader(f)
+    pairs = []
+    for row in reader:
+        pairs.append(row)
+        
+pairs
+combinedpairs = []
+for row in pairs:
+    filenames1 = idx[row[0]]
+    filenames2 = idx[row[2]]
+    for n in filenames1:
+        for m in filenames2:
+            combinedpairs.append([row[:2] + n + row[2:] + m])
+idx
+nidx = {}
+for word in idx:
+    nidx[word['word']] = idx['filenames']
+    
+nidx = {}
+for word in idx:
+    nidx[word['word']] = word['filenames']
+    
+nidx
+for row in pairs:
+    filenames1 = idx[row[0]]
+    filenames2 = idx[row[2]]
+    for n in filenames1:
+        for m in filenames2:
+            combinedpairs.append([row[:2] + n + row[2:] + m])
+for row in pairs:
+    filenames1 = nidx[row[0]]
+    filenames2 = nidx[row[2]]
+    for n in filenames1:
+        for m in filenames2:
+            combinedpairs.append([row[:2] + n + row[2:] + m])
+for row in pairs:
+    filenames1 = nidx[row[0]]
+    filenames2 = nidx[row[2]]
+    for n in filenames1:
+        for m in filenames2:
+            combinedpairs.append([row[:2] + [n] + row[2:] + [m]])
+combinedpairs
+combinedpairs = []
+for row in pairs:
+    filenames1 = nidx[row[0]]
+    filenames2 = nidx[row[2]]
+    for n in filenames1:
+        for m in filenames2:
+            combinedpairs.append(row[:2] + [n] + row[2:] + [m])
+combinedpairs
+with open('deck.csv', 'w', newline='') as fout:
+    writer = csv.writer(fout)
+    writer.writerows(combinedpairs)
+    
+len(combinedpairs)

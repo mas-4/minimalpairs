@@ -1,0 +1,50 @@
+# coding: utf-8
+import json, csv
+json.load(open('filenames.json'))
+badidx = json.load(open('filenames.json'))
+nidx = {}
+for word in idx:
+    nidx[word['word']] = word['filenames']
+idx = {}
+for word in badidx:
+    idx[word['word']] = word['filenames']
+idx
+ls
+with open('minimalpairs.csv', newline='') as f:
+    reader = csv.reader(f)
+    pairs = []
+    for row in reader:
+        pairs.append(row)
+        
+pairs
+combinedpairs = []
+i = 1
+for row in pairs:
+    filenames1 = idx[row[0]]
+    filenames2 = idx[row[2]]
+    for n in filenames1:
+        f1 = n.replace('files/', '')
+        f1 = f'[sound:{f1}]'
+        for m in filenames2:
+            f2 = m.replcae('files/', '')
+            f2 = f'[sound:{f2}]'
+            combinedpairs.append([i] + row[:2] + [f1] + row[2:] + [f2])
+            i += 1
+combinedpairs = []
+i = 1
+for row in pairs:
+    filenames1 = idx[row[0]]
+    filenames2 = idx[row[2]]
+    for n in filenames1:
+        f1 = n.replace('files/', '')
+        f1 = f'[sound:{f1}]'
+        for m in filenames2:
+            f2 = m.replace('files/', '')
+            f2 = f'[sound:{f2}]'
+            combinedpairs.append([i] + row[:2] + [f1] + row[2:] + [f2])
+            i += 1
+combinedpairs
+with open('deck.csv', 'w', newline='') as fout:
+    writer = csv.writer(fout)
+    writer.writerows(combinedpairs)
+    

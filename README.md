@@ -139,4 +139,4 @@ Anyway, shared the anki deck and now it's linked at the top.
 [3]: https://linguistics.stackexchange.com/a/11634
 [4]: http://verbally.flimzy.com/list-of-french-minimal-pairs/
 [5]: https://minimalpairs.net/en
-[6]: https://ankiweb.net/shared/info/214686543
+[6]: https://ankiweb.net/shared/info/1347940877

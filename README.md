@@ -127,7 +127,7 @@ By Tuesday, I'd say, I'll have them all.
 The Deck
 --------
 
-So as predicted I finished today. Added too ipy files because my first attempt
+So as predicted I finished today. Added 2 ipy files because my first attempt
 to create the deck was a little short sighted and I didn't think about how to
 cite the file name to play the audio.
 

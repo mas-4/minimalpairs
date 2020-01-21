@@ -133,6 +133,33 @@ cite the file name to play the audio.
 
 Anyway, shared the anki deck and now it's linked at the top.
 
+
+Update 1/21/2020
+================
+
+I wanted to give a bit of an update about the quality of the deck some months
+later. I have actually stopped using the deck. There are quality issues.
+
+First, if you are going to try to create your own deck (for whatever language)
+pay attention to the quality of the sound files. There is a rating (votes) and a
+ranking to each voice selection that is provided by forvo. Use it. I didn't and
+the result was sometimes words that are clearly mispronounced for whatever
+reason.
+
+Second, trim the sound comparisons. You do not need even half of the vowels in
+French. Ultimately you can probably trim the thing down to at most 5 difficult
+sound comparisons (/u/ vs /eu/, for instance, instead of including /u/ vs /a/ which is
+obvious).
+
+For all these reasons I have more or less given up on the deck (plus it was an
+insane time suck because I gave myself way too many comparisons a day in the
+beginning). I may eventually return to this project to recreate it, because I
+still do have trouble distinguishing between /u/, /eu/ and a few other phonemes.
+I would create a deck, in that event, of just those five or ten comparisons that
+I have trouble with.
+
+Regardless, I hope this repo will help someone eventually.
+
 [0]: https://fluent-forever.com/product/fluent-forever-pronunciation-trainer/
 [1]: https://www.reddit.com/r/German/comments/2przo1/a_review_of_fluent_forever_foreign_language/
 [2]: https://ankiweb.net/shared/info/932662308
